@@ -1,0 +1,180 @@
+﻿@model AdminPanel.Models.Product
+@{
+    ViewBag.Title = "Sản Phẩm";
+    ViewBag.SubTitle = "Delete";
+}
+
+<h3>Bạn chắc chắn muốn sản phẩm?</h3>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+                Tên Sản phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+               Số lượng mỗi sản phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.QuantityPerUnit)
+            </dd>
+            <dt>
+                Giá hiện tại
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+            <dt>
+                Giá cũ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OldPrice)
+            </dd>
+            <dt>
+                Trọng lượng sản phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitWeight)
+            </dd>
+            <dt>
+                Kích cỡ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+            <dt>
+                Giảm giá
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Discount)
+            </dd>
+            <dt>
+                Số lượng hàng còn
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitInStock)
+            </dd>
+            <dt>
+                Số lượng hàng đặt
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitOnOrder)
+            </dd>
+            <dt>
+                Sản phẩm hiện có
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductAvailable)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ImageURL)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ImageURL)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AltText)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AltText)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AddBadge)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AddBadge)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OfferTitle)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OfferTitle)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.OfferBadgeClass)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OfferBadgeClass)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ShortDescription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ShortDescription)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.LongDescription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LongDescription)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture1)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture2)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture2)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture3)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture3)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture4)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture4)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Note)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SubCategory.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SubCategory.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Supplier.CompanyName)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm("Delete", "Product", new { id = @Model.ProductID }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "" })
+        <input type="submit" onclick="return confirm ('Bạn chắc chắn muốn xóa không _____?')" value="Delete" class="btn btn-danger col-md-offset-1" />
+    </div>
+}
+  

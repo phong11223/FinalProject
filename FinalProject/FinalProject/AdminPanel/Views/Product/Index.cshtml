@@ -1,0 +1,102 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@model PagedList.IPagedList<AdminPanel.Models.Product>
+@{
+    ViewBag.Title = "Sản Phẩm";
+}
+
+<div>
+    <a href="@Url.Action("Create", "Product")" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+</div>
+<br /><br />
+      <div id="product" class="table-responsive ">
+          <table class="table table-condensed table-hover table-bordered table-striped table">
+              <tr>
+                  <th>
+                      Tên Sản phẩm
+                  </th>
+
+                  <th>
+                      Giá hiện tại
+                  </th>
+                  <th>
+                      Giá cũ
+                  </th>
+                  <th>
+                      Tên danh mục
+                  </th>
+                  <th>
+                      Tên danh mục phụ
+                  </th>
+                  <th>
+                      Tên công ty
+                  </th>
+
+                  <th>
+                      Giảm giá
+                  </th>
+                  <th>
+                      Số lượng sản phẩm
+                  </th>
+                  <th>
+                      Số lượng dặt hàng
+                  </th>
+                  <th>
+                      Sản phẩm hiện có
+                  </th>
+
+                  <th></th>
+              </tr>
+              @foreach (var item in Model)
+              {
+                  <tr>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Name)
+                      </td>
+
+                      <td>
+                          @Html.DisplayFor(modelItem => item.UnitPrice)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.OldPrice)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Category.Name)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.SubCategory.Name)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.Discount)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.UnitInStock)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.UnitOnOrder)
+                      </td>
+                      <td>
+                          @Html.DisplayFor(modelItem => item.ProductAvailable)
+                      </td>
+
+                      <td>
+                          <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", "Product", new { id = item.ProductID })" aria-label="Edit">
+                              <i class="fa fa-edit" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Product", new { id = item.ProductID })" aria-label="Details">
+                              <i class="fa fa-info" aria-hidden="true"></i>
+                          </a>
+                          <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Product", new { id = item.ProductID })" aria-label="Delete">
+                              <i class="fa fa-trash-o" aria-hidden="true"></i>
+                          </a>
+                      </td>
+                  </tr>
+              }
+          </table>
+          @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
+          Showing @Model.FirstItemOnPage to @Model.LastItemOnPage of @Model.TotalItemCount Products
+      </div>
+

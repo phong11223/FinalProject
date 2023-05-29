@@ -1,0 +1,136 @@
+﻿@model AdminPanel.Models.Customer
+@{
+    ViewBag.Title = "Khách hàng";
+    ViewBag.SubTitle = "Delete";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+                Họ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.First_Name)
+            </dd>
+            <dt>
+                Tên
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Last_Name)
+            </dd>
+            <dt>
+                Tài khoản
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt>
+                Mật khẩu
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+            <dt>
+                Tuổi
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt>
+                Giới tính
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+            <dt>
+                Ngày sinh
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DateofBirth)
+            </dd>
+            
+            <dt>
+                Quốc gia
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+            <dt>
+                Quận/Huyện
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.QuanHuyen)
+            </dd>
+            <dt>
+                Thành phố
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            
+            <dt>
+                Số đt 
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+            <dt>
+                Địa chỉ 
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            
+               Hình ảnh
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture)
+            </dd>
+            <dt>
+                Trạng thái
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+            <dt>
+                Đăng nhập lần cuối
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LastLogin)
+            </dd>
+            <dt>
+               Ngày tạo
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+            <dt>
+                Ghi chú
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div>
+@using (Html.BeginForm("Delete", "Customer", new { id = @Model.CustomerID }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "" })
+        <input type="submit" onclick="return confirm ('Bạn chắc chắn muốn xóa không _____?')" value="Delete" class="btn btn-danger col-md-offset-1" />
+    </div>
+}

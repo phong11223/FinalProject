@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="OnlineShopEntities-Web.config Connection String" description="OnlineShopEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.OnlineShop.csdl|res://*/Models.OnlineShop.ssdl|res://*/Models.OnlineShop.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-CPVN822;initial catalog=OnlineShop;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\FinalProject-main\\FinalProject-main\\FinalProject\\FinalProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OnlineShopEntities']/@connectionString" />
+  </parameter>
+  <parameter name="FinalProject.Models.UserContext-Web.config Connection String" description="FinalProject.Models.UserContext Connection String used in web.config by the application to access the database." defaultValue="FinalProject.Models.UserContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\FinalProject-main\\FinalProject-main\\FinalProject\\FinalProject\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FinalProject.Models.UserContext']/@connectionString" />
+  </parameter>
+</parameters>

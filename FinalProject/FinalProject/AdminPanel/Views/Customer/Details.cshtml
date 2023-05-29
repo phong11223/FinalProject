@@ -1,0 +1,170 @@
+﻿@model AdminPanel.Models.Customer
+@{
+    ViewBag.Title = "Khách hàng";
+    ViewBag.SubTitle = "Chi tiết";
+}
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+                Họ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.First_Name)
+            </dd>
+            <dt>
+                Tên
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Last_Name)
+            </dd>
+            <dt>
+                Tài khoản
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+            <dt>
+                Mật khẩu
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+            <dt>
+                Tuổi
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+            <dt>
+                Giới tính
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+            <dt>
+                Ngày sinh
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DateofBirth)
+            </dd>
+            <dt>
+                Cơ quan
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Organization)
+            </dd>
+            <dt>
+                Quốc gia
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+            <dt>
+                Tiểu bang
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.State)
+            </dd>
+            <dt>
+                Thành phố
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt>
+                Mã bưu điện
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PostalCode)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                Email thay thế
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AltEmail)
+            </dd>
+            <dt>
+                Số đt bàn 1
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone1)
+            </dd>
+            <dt>
+                Số đt bàn 2
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone2)
+            </dd>
+            <dt>
+                Số đt di động 1
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mobile1)
+            </dd>
+            <dt>
+                Số đt di động 2
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mobile2)
+            </dd>
+            <dt>
+                Địa chỉ 1
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address1)
+            </dd>
+            <dt>
+                Địa chỉ 2
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address2)
+            </dd>
+            <dt>
+                Hình ảnh
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture)
+            </dd>
+            <dt>
+                Trạng thái
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+            <dt>
+                Đăng nhập lần cuối
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LastLogin)
+            </dd>
+            <dt>
+                Ngày tạo
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Created)
+            </dd>
+            <dt>
+                Ghi chú
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Notes)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

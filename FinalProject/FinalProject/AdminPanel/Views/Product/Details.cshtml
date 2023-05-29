@@ -1,0 +1,171 @@
+﻿@model AdminPanel.Models.Product
+@{
+    ViewBag.Title = "Sản Phẩm";
+    ViewBag.SubTitle = "Details";
+}
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+               Tên Sản Phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                Số lượng mỗi sản phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.QuantityPerUnit)
+            </dd>
+            <dt>
+                Giá hiện tại
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+            <dt>
+                Giá cũ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OldPrice)
+            </dd>
+            <dt>
+                Trọng lượng sản phẩm
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitWeight)
+            </dd>
+            <dt>
+               Kích cỡ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Size)
+            </dd>
+            <dt>
+                Giảm giá
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Discount)
+            </dd>
+            <dt>
+                Số lượng hàng còn 
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitInStock)
+            </dd>
+            <dt>
+                Số lượng đặt hàng
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UnitOnOrder)
+            </dd>
+            <dt>
+                 Sản phẩm hiện có
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductAvailable)
+            </dd>
+            <dt>
+                Đường truyền hình ảnh
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ImageURL)
+            </dd>
+            <dt>
+                Từ thay thế
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AltText)
+            </dd>
+            <dt>
+                Thêm huy hiệu
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AddBadge)
+            </dd>
+            <dt>
+                Tên đề nghị
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OfferTitle)
+            </dd>
+            <dt>
+                Cung cấp lớp huy hiệu
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.OfferBadgeClass)
+            </dd>
+            <dt>
+                Mô tả ngắn
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ShortDescription)
+            </dd>
+            <dt>
+                Mô tả dài
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.LongDescription)
+            </dd>
+            <dt>
+                hình 1
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture1)
+            </dd>
+            <dt>
+                hình 2
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture2)
+            </dd>
+            <dt>
+                hình 3
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture3)
+            </dd>
+            <dt>
+                hình 4
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture4)
+            </dd>
+            <dt>
+                Ghi chú
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+            <dt>
+                Tên danh mục chính
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+            <dt>
+                Tên danh mụ phụ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SubCategory.Name)
+            </dd>
+            <dt>
+               Tên công ty
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Supplier.CompanyName)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

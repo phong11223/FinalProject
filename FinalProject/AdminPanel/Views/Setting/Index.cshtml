@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Tùy Chọn";
+}
+
+<form class="form-horizontal col-md-8">
+    <div class="form-group">
+        <label for="webName" class="control-label col-md-4">Tên Website:</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" id="webName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="motto" class="control-label col-md-4">Motto</label>
+        <div class="col-md-8">
+            <input type="text" class="form-control" id="motto">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="motto" class="control-label col-md-4">Màu Giao Diện:</label>
+        <div class="col-md-8">
+            @Html.DropDownList("Chọn màu", new List<SelectListItem>() {
+                                new SelectListItem(){Text="Xanh",Value="Nam"},
+                                new SelectListItem(){Text="Lá cây",Value="Nữ"},
+                                new SelectListItem(){Text="Đỏ",Value="Khác"},
+                                new SelectListItem(){Text="Vàng",Value="Khác"},
+                                new SelectListItem(){Text="Cam",Value="Khác"}
+
+
+                }, "--Select color--", new { @class = "form-control" })
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary col-lg-offset-4">Save</button>
+</form>

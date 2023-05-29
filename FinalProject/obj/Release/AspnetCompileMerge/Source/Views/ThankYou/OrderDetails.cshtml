@@ -1,0 +1,118 @@
+﻿@using FinalProject.Models;
+@model Tuple<Order, IEnumerable<OrderDetail>>
+@{
+    ViewBag.Title = "Đặt hàng";
+    ViewBag.SubTitle = "Chi tiết";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <dl class="dl-horizontal ">
+            <dt>
+                @Html.DisplayName("Tên khách hàng: ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Item1.Customer.First_Name)
+            </dd>
+            <dt>
+                @Html.DisplayName("Đại chỉ khách hàng : ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Item1.Customer.Address1)
+            </dd>
+            <dt>
+                @Html.DisplayName("Số điện thoại liên lạc : ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Item1.Customer.Mobile1)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-6">
+        <dl class="dl-horizontal ">
+            <dt>
+                @Html.DisplayName("Kiểu thanh toán : ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Item1.Payment.PaymentType)
+            </dd>
+            <dt>
+                @Html.DisplayName("Địa chỉ Giao hàng : ")
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Item1.ShippingDetail.Address)
+            </dd>
+
+
+        </dl>
+    </div>
+</div>
+    <div class=" panel-primary">
+        <div class="panel-heading">
+            <h4>Items</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="">
+                    <div class="table-responsive col-md ">
+                        <table class="table table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá hiện tại</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @{int i = 0;}
+                                @foreach (var item in Model.Item2)
+                                {
+                                    i++;
+                                    <tr>
+                                        <td>@i.ToString()</td>
+                                        <td>@item.Product.Name</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.UnitPrice</td>
+                                        <td>@item.TotalAmount</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5"><h2></h2></td>
+
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>@ViewBag.TotalItems</th>
+                                    <th></th>
+                                    <th>@ViewBag.Amount </th>
+                                </tr>
+                                <tr>
+                                    <th>Discount</th>
+                                    <th colspan="3"></th>
+                                    <th>@ViewBag.Discount</th>
+                                </tr>
+                                <tr class="bg-info">
+                                    <th>Total Amount</th>
+                                    <th colspan="3"></th>
+                                    <th>@ViewBag.TAmount</th>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.ActionLink("Back", "OrderPayment","Thankyou", new { @class = "btn btn-success" })
+
+
+

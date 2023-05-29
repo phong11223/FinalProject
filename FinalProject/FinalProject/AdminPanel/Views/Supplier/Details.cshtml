@@ -1,0 +1,82 @@
+﻿@model AdminPanel.Models.Supplier
+@{
+    ViewBag.Title = "Cung cấp";
+    ViewBag.SubTitle = "Chi tiết";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+                ID Hàng cung cấp
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.SupplierID)
+            </dd>
+            <dt>
+                Tên công ty
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CompanyName)
+            </dd>
+            <dt>
+                Người liên lạc
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ContactName)
+            </dd>
+            <dt>
+               Thông tin liên lạc
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ContactTitle)
+            </dd>
+            <dt>
+                Số đt di động 
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Mobile)
+            </dd>
+            <dt>
+                Số đt di động bàn
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+            <dt>
+                Địa chỉ
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt>
+                Thành phố
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+            <dt>
+                Quốc gia
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+            <dt>
+               Máy Fax
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Fax)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

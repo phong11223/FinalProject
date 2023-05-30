@@ -1,4 +1,4 @@
-﻿@using FinalProject.Models;
+@using FinalProject.Models;
 @model Tuple<Order, IEnumerable<OrderDetail>>
 @{
     ViewBag.Title = "Đặt hàng";
@@ -18,13 +18,13 @@
                 @Html.DisplayName("Đại chỉ khách hàng : ")
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Item1.Customer.Address1)
+                @Html.DisplayFor(model => model.Item1.Customer.Address)
             </dd>
             <dt>
                 @Html.DisplayName("Số điện thoại liên lạc : ")
             </dt>
             <dd>
-                @Html.DisplayFor(model => model.Item1.Customer.Mobile1)
+                @Html.DisplayFor(model => model.Item1.Customer.Phone)
             </dd>
 
         </dl>

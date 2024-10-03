@@ -1,2 +1,2 @@
-Thay đổi webcofing : đổi datasoure 
+Thay đổi webcofing : đổi datasoure trong config
 đang dùng SQL studio 17
